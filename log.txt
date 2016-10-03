@@ -1,0 +1,358 @@
+Last login: Sun Oct  2 12:15:47 on ttys001
+Mohammads-MacBook-Air:~ mohammadselimmiah$ cd ~/Sites/Api
+Mohammads-MacBook-Air:Api mohammadselimmiah$ ls -lrt
+total 0
+drwxr-xr-x   3 mohammadselimmiah  staff   102  3 Aug 08:03 ApiSitepoint
+drwxr-xr-x  25 mohammadselimmiah  staff   850 29 Aug 18:45 restAPP
+drwxr-xr-x  30 mohammadselimmiah  staff  1020 10 Sep 15:51 ApiDingo
+drwxr-xr-x   3 mohammadselimmiah  staff   102 13 Sep 19:57 dunebookApi
+drwxr-xr-x  25 mohammadselimmiah  staff   850 19 Sep 06:58 testApi
+drwxr-xr-x   3 mohammadselimmiah  staff   102 30 Sep 23:06 dingoApi
+drwxr-xr-x  27 mohammadselimmiah  staff   918  2 Oct 13:29 Laravel
+Mohammads-MacBook-Air:Api mohammadselimmiah$ 
+Mohammads-MacBook-Air:Api mohammadselimmiah$ 
+Mohammads-MacBook-Air:Api mohammadselimmiah$ pwd
+/Users/mohammadselimmiah/Sites/Api
+Mohammads-MacBook-Air:Api mohammadselimmiah$ 
+Mohammads-MacBook-Air:Api mohammadselimmiah$ 
+Mohammads-MacBook-Air:Api mohammadselimmiah$ git clone https://github.com/francescomalatesta/laravel-api-boilerplate-jwt rhcApi
+Cloning into 'rhcApi'...
+remote: Counting objects: 242, done.
+remote: Total 242 (delta 0), reused 0 (delta 0), pack-reused 242
+Receiving objects: 100% (242/242), 71.57 KiB | 50.00 KiB/s, done.
+Resolving deltas: 100% (79/79), done.
+Checking connectivity... done.
+Mohammads-MacBook-Air:Api mohammadselimmiah$ 
+Mohammads-MacBook-Air:Api mohammadselimmiah$ 
+Mohammads-MacBook-Air:Api mohammadselimmiah$ 
+Mohammads-MacBook-Air:Api mohammadselimmiah$ composer install
+Composer could not find a composer.json file in /Users/mohammadselimmiah/Sites/Api
+To initialize a project, please create a composer.json file as described in the https://getcomposer.org/ "Getting Started" section
+Mohammads-MacBook-Air:Api mohammadselimmiah$ 
+Mohammads-MacBook-Air:Api mohammadselimmiah$ 
+Mohammads-MacBook-Air:Api mohammadselimmiah$ pwd
+/Users/mohammadselimmiah/Sites/Api
+Mohammads-MacBook-Air:Api mohammadselimmiah$ ls -lrt
+total 0
+drwxr-xr-x   3 mohammadselimmiah  staff   102  3 Aug 08:03 ApiSitepoint
+drwxr-xr-x  25 mohammadselimmiah  staff   850 29 Aug 18:45 restAPP
+drwxr-xr-x  30 mohammadselimmiah  staff  1020 10 Sep 15:51 ApiDingo
+drwxr-xr-x   3 mohammadselimmiah  staff   102 13 Sep 19:57 dunebookApi
+drwxr-xr-x  25 mohammadselimmiah  staff   850 19 Sep 06:58 testApi
+drwxr-xr-x   3 mohammadselimmiah  staff   102 30 Sep 23:06 dingoApi
+drwxr-xr-x  27 mohammadselimmiah  staff   918  2 Oct 13:29 Laravel
+drwxr-xr-x  22 mohammadselimmiah  staff   748  2 Oct 16:21 rhcApi
+Mohammads-MacBook-Air:Api mohammadselimmiah$ 
+Mohammads-MacBook-Air:Api mohammadselimmiah$ 
+Mohammads-MacBook-Air:Api mohammadselimmiah$ 
+Mohammads-MacBook-Air:Api mohammadselimmiah$ cd rhcApi/
+Mohammads-MacBook-Air:rhcApi mohammadselimmiah$ ls -lrt
+total 72
+-rw-r--r--   1 mohammadselimmiah  staff   567  2 Oct 16:21 server.php
+drwxr-xr-x   5 mohammadselimmiah  staff   170  2 Oct 16:21 resources
+-rw-r--r--   1 mohammadselimmiah  staff  4291  2 Oct 16:21 readme.md
+drwxr-xr-x   7 mohammadselimmiah  staff   238  2 Oct 16:21 public
+-rwxr-xr-x   1 mohammadselimmiah  staff  1026  2 Oct 16:21 phpunit.xml
+-rw-r--r--   1 mohammadselimmiah  staff    87  2 Oct 16:21 phpspec.yml
+-rwxr-xr-x   1 mohammadselimmiah  staff   159  2 Oct 16:21 package.json
+-rw-r--r--   1 mohammadselimmiah  staff   503  2 Oct 16:21 gulpfile.js
+drwxr-xr-x   6 mohammadselimmiah  staff   204  2 Oct 16:21 database
+drwxr-xr-x  18 mohammadselimmiah  staff   612  2 Oct 16:21 config
+-rwxr-xr-x   1 mohammadselimmiah  staff  1550  2 Oct 16:21 composer.json
+drwxr-xr-x   5 mohammadselimmiah  staff   170  2 Oct 16:21 bootstrap
+-rwxr-xr-x   1 mohammadselimmiah  staff  1646  2 Oct 16:21 artisan
+drwxr-xr-x  12 mohammadselimmiah  staff   408  2 Oct 16:21 app
+drwxr-xr-x   4 mohammadselimmiah  staff   136  2 Oct 16:21 tests
+drwxr-xr-x   5 mohammadselimmiah  staff   170  2 Oct 16:21 storage
+Mohammads-MacBook-Air:rhcApi mohammadselimmiah$ 
+Mohammads-MacBook-Air:rhcApi mohammadselimmiah$ 
+Mohammads-MacBook-Air:rhcApi mohammadselimmiah$ 
+Mohammads-MacBook-Air:rhcApi mohammadselimmiah$ composer install
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+  - Installing symfony/polyfill-util (v1.2.0)
+    Loading from cache
+
+  - Installing symfony/polyfill-php56 (v1.2.0)
+    Loading from cache
+
+  - Installing nikic/php-parser (v2.1.1)
+    Loading from cache
+
+  - Installing jeremeamia/superclosure (2.2.0)
+    Loading from cache
+
+  - Installing classpreloader/classpreloader (3.0.0)
+    Loading from cache
+
+  - Installing psr/log (1.0.1)
+    Loading from cache
+
+  - Installing symfony/debug (v2.8.11)
+    Loading from cache
+
+  - Installing symfony/polyfill-mbstring (v1.2.0)
+    Loading from cache
+
+  - Installing ircmaxell/password-compat (v1.0.4)
+    Loading from cache
+
+  - Installing symfony/polyfill-php55 (v1.2.0)
+    Loading from cache
+
+  - Installing symfony/polyfill-php54 (v1.2.0)
+    Loading from cache
+
+  - Installing symfony/http-foundation (v2.8.11)
+    Loading from cache
+
+  - Installing symfony/event-dispatcher (v3.0.9)
+    Loading from cache
+
+  - Installing symfony/http-kernel (v2.8.11)
+    Loading from cache
+
+  - Installing asm89/stack-cors (0.2.1)
+    Loading from cache
+
+  - Installing vlucas/phpdotenv (v2.4.0)
+    Loading from cache
+
+  - Installing symfony/var-dumper (v3.0.9)
+    Loading from cache
+
+  - Installing symfony/translation (v3.0.9)
+    Loading from cache
+
+  - Installing symfony/routing (v3.0.9)
+    Loading from cache
+
+  - Installing symfony/process (v3.0.9)
+    Loading from cache
+
+  - Installing symfony/finder (v3.0.9)
+    Loading from cache
+
+  - Installing symfony/console (v3.0.9)
+    Loading from cache
+
+  - Installing swiftmailer/swiftmailer (v5.4.3)
+    Loading from cache
+
+  - Installing jakub-onderka/php-console-color (0.1)
+    Loading from cache
+
+  - Installing jakub-onderka/php-console-highlighter (v0.3.2)
+    Loading from cache
+
+  - Installing dnoegel/php-xdg-base-dir (0.1)
+    Loading from cache
+
+  - Installing paragonie/random_compat (v1.4.1)
+    Loading from cache
+
+  - Installing nesbot/carbon (1.21.0)
+    Loading from cache
+
+  - Installing mtdowling/cron-expression (v1.1.0)
+    Loading from cache
+
+  - Installing monolog/monolog (1.21.0)
+    Loading from cache
+
+  - Installing league/flysystem (1.0.27)
+    Loading from cache
+
+  - Installing doctrine/inflector (v1.1.0)
+    Loading from cache
+
+  - Installing psy/psysh (v0.7.2)
+    Loading from cache
+
+  - Installing laravel/framework (v5.2.45)
+    Loading from cache
+
+  - Installing barryvdh/laravel-cors (v0.7.3)
+    Loading from cache
+
+  - Installing phpseclib/phpseclib (0.3.10)
+    Loading from cache
+
+  - Installing namshi/jose (5.0.2)
+    Loading from cache
+
+  - Installing tymon/jwt-auth (0.5.9)
+    Loading from cache
+
+  - Installing webmozart/assert (1.1.0)
+    Loading from cache
+
+  - Installing phpdocumentor/reflection-common (1.0)
+    Loading from cache
+
+  - Installing phpdocumentor/type-resolver (0.2)
+    Loading from cache
+
+  - Installing phpdocumentor/reflection-docblock (3.1.1)
+    Loading from cache
+
+  - Installing doctrine/lexer (v1.0.1)
+    Loading from cache
+
+  - Installing doctrine/annotations (v1.2.7)
+    Loading from cache
+
+  - Installing dingo/blueprint (v0.2.0)
+    Loading from cache
+
+  - Installing league/fractal (0.14.0)
+    Loading from cache
+
+  - Installing dingo/api (dev-master 242411e)
+    Loading from cache
+
+  - Installing fzaninotto/faker (v1.6.0)
+    Loading from cache
+
+  - Installing hamcrest/hamcrest-php (v1.2.2)
+    Loading from cache
+
+  - Installing mockery/mockery (0.9.5)
+    Loading from cache
+
+  - Installing symfony/yaml (v3.1.4)
+    Loading from cache
+
+  - Installing sebastian/version (1.0.6)
+    Loading from cache
+
+  - Installing sebastian/global-state (1.1.1)
+    Loading from cache
+
+  - Installing sebastian/recursion-context (1.0.2)
+    Loading from cache
+
+  - Installing sebastian/exporter (1.2.2)
+    Loading from cache
+
+  - Installing sebastian/environment (1.3.8)
+    Loading from cache
+
+  - Installing sebastian/diff (1.4.1)
+    Loading from cache
+
+  - Installing sebastian/comparator (1.2.0)
+    Loading from cache
+
+  - Installing doctrine/instantiator (1.0.5)
+    Loading from cache
+
+  - Installing phpunit/php-text-template (1.2.1)
+    Loading from cache
+
+  - Installing phpunit/phpunit-mock-objects (2.3.8)
+    Loading from cache
+
+  - Installing phpunit/php-timer (1.0.8)
+    Loading from cache
+
+  - Installing phpunit/php-file-iterator (1.4.1)
+    Loading from cache
+
+  - Installing phpunit/php-token-stream (1.4.8)
+    Loading from cache
+
+  - Installing phpunit/php-code-coverage (2.2.4)
+    Loading from cache
+
+  - Installing phpspec/prophecy (v1.6.1)
+    Loading from cache
+
+  - Installing phpunit/phpunit (4.8.27)
+    Loading from cache
+
+  - Installing symfony/css-selector (v3.0.9)
+    Loading from cache
+
+  - Installing symfony/dom-crawler (v3.0.9)
+    Loading from cache
+
+symfony/event-dispatcher suggests installing symfony/dependency-injection ()
+symfony/http-kernel suggests installing symfony/browser-kit ()
+symfony/http-kernel suggests installing symfony/class-loader ()
+symfony/http-kernel suggests installing symfony/config ()
+symfony/http-kernel suggests installing symfony/dependency-injection ()
+symfony/var-dumper suggests installing ext-symfony_debug ()
+symfony/translation suggests installing symfony/config ()
+symfony/routing suggests installing symfony/config (For using the all-in-one router or any loader)
+symfony/routing suggests installing symfony/dependency-injection (For loading routes from a service)
+symfony/routing suggests installing symfony/expression-language (For using expression matching)
+paragonie/random_compat suggests installing ext-libsodium (Provides a modern crypto API that can be used to generate random bytes.)
+monolog/monolog suggests installing aws/aws-sdk-php (Allow sending log messages to AWS services like DynamoDB)
+monolog/monolog suggests installing doctrine/couchdb (Allow sending log messages to a CouchDB server)
+monolog/monolog suggests installing ext-amqp (Allow sending log messages to an AMQP server (1.0+ required))
+monolog/monolog suggests installing ext-mongo (Allow sending log messages to a MongoDB server)
+monolog/monolog suggests installing graylog2/gelf-php (Allow sending log messages to a GrayLog2 server)
+monolog/monolog suggests installing mongodb/mongodb (Allow sending log messages to a MongoDB server via PHP Driver)
+monolog/monolog suggests installing php-amqplib/php-amqplib (Allow sending log messages to an AMQP server using php-amqplib)
+monolog/monolog suggests installing php-console/php-console (Allow sending log messages to Google Chrome)
+monolog/monolog suggests installing rollbar/rollbar (Allow sending log messages to Rollbar)
+monolog/monolog suggests installing ruflin/elastica (Allow sending log messages to an Elastic Search server)
+monolog/monolog suggests installing sentry/sentry (Allow sending log messages to a Sentry server)
+league/flysystem suggests installing league/flysystem-aws-s3-v2 (Allows you to use S3 storage with AWS SDK v2)
+league/flysystem suggests installing league/flysystem-aws-s3-v3 (Allows you to use S3 storage with AWS SDK v3)
+league/flysystem suggests installing league/flysystem-azure (Allows you to use Windows Azure Blob storage)
+league/flysystem suggests installing league/flysystem-cached-adapter (Flysystem adapter decorator for metadata caching)
+league/flysystem suggests installing league/flysystem-copy (Allows you to use Copy.com storage)
+league/flysystem suggests installing league/flysystem-dropbox (Allows you to use Dropbox storage)
+league/flysystem suggests installing league/flysystem-eventable-filesystem (Allows you to use EventableFilesystem)
+league/flysystem suggests installing league/flysystem-rackspace (Allows you to use Rackspace Cloud Files)
+league/flysystem suggests installing league/flysystem-sftp (Allows you to use SFTP server storage via phpseclib)
+league/flysystem suggests installing league/flysystem-webdav (Allows you to use WebDAV storage)
+league/flysystem suggests installing league/flysystem-ziparchive (Allows you to use ZipArchive adapter)
+psy/psysh suggests installing ext-pdo-sqlite (The doc command requires SQLite to work.)
+laravel/framework suggests installing aws/aws-sdk-php (Required to use the SQS queue driver and SES mail driver (~3.0).)
+laravel/framework suggests installing doctrine/dbal (Required to rename columns and drop SQLite columns (~2.4).)
+laravel/framework suggests installing guzzlehttp/guzzle (Required to use the Mailgun and Mandrill mail drivers and the ping methods on schedules (~5.3|~6.0).)
+laravel/framework suggests installing league/flysystem-aws-s3-v3 (Required to use the Flysystem S3 driver (~1.0).)
+laravel/framework suggests installing league/flysystem-rackspace (Required to use the Flysystem Rackspace driver (~1.0).)
+laravel/framework suggests installing pda/pheanstalk (Required to use the beanstalk queue driver (~3.0).)
+laravel/framework suggests installing predis/predis (Required to use the redis cache and queue drivers (~1.0).)
+laravel/framework suggests installing pusher/pusher-php-server (Required to use the Pusher broadcast driver (~2.0).)
+laravel/framework suggests installing symfony/psr-http-message-bridge (Required to use psr7 bridging features (0.2.*).)
+phpseclib/phpseclib suggests installing ext-mcrypt (Install the Mcrypt extension in order to speed up a wide variety of cryptographic operations.)
+phpseclib/phpseclib suggests installing ext-gmp (Install the GMP (GNU Multiple Precision) extension in order to speed up arbitrary precision integer arithmetic operations.)
+phpseclib/phpseclib suggests installing pear-pear/PHP_Compat (Install PHP_Compat to get phpseclib working on PHP < 4.3.3.)
+league/fractal suggests installing pagerfanta/pagerfanta (Pagerfanta Paginator)
+league/fractal suggests installing zendframework/zend-paginator (Zend Framework Paginator)
+dingo/api suggests installing lucadegasperi/oauth2-server-laravel (Protect your API with OAuth 2.0.)
+sebastian/global-state suggests installing ext-uopz (*)
+phpunit/php-code-coverage suggests installing ext-xdebug (>=2.2.1)
+phpunit/phpunit suggests installing phpunit/php-invoker (~1.1)
+Writing lock file
+Generating autoload files
+> Illuminate\Foundation\ComposerScripts::postUpdate
+> php artisan optimize
+Generating optimized class loader
+Compiling common classes
+Mohammads-MacBook-Air:rhcApi mohammadselimmiah$ 
+Mohammads-MacBook-Air:rhcApi mohammadselimmiah$ 
+Mohammads-MacBook-Air:rhcApi mohammadselimmiah$ php artisan clear-compiled
+Mohammads-MacBook-Air:rhcApi mohammadselimmiah$ 
+Mohammads-MacBook-Air:rhcApi mohammadselimmiah$ php -r "copy('.env.example','.env');"
+Mohammads-MacBook-Air:rhcApi mohammadselimmiah$ 
+Mohammads-MacBook-Air:rhcApi mohammadselimmiah$ 
+Mohammads-MacBook-Air:rhcApi mohammadselimmiah$ 
+Mohammads-MacBook-Air:rhcApi mohammadselimmiah$ php artisan key:generate
+Application key [base64:I/NRgZth5EWvy3034JUZLs/tVsHK1SbGfu8b+4/jcUI=] set successfully.
+Mohammads-MacBook-Air:rhcApi mohammadselimmiah$ 
+Mohammads-MacBook-Air:rhcApi mohammadselimmiah$ 
+Mohammads-MacBook-Air:rhcApi mohammadselimmiah$ 
+Mohammads-MacBook-Air:rhcApi mohammadselimmiah$ php artisan jwt:generate
+jwt-auth secret [rRGOyZjq2Hh3XDk1joDATVTYI2PHIYH3] set successfully.
+Mohammads-MacBook-Air:rhcApi mohammadselimmiah$ 
+Mohammads-MacBook-Air:rhcApi mohammadselimmiah$ 
+Mohammads-MacBook-Air:rhcApi mohammadselimmiah$ pwd
+/Users/mohammadselimmiah/Sites/Api/rhcApi
+Mohammads-MacBook-Air:rhcApi mohammadselimmiah$ 
+
