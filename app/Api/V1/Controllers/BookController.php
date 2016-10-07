@@ -41,5 +41,46 @@ class BookController extends Controller
         //with response headers also will be tweaked accordingly to follow RESTful standards along with body
     }
 
+    public function show($id)
+    {
+        $currentUser = JWTAuth::parseToken()->authenticate();
 
+        $book = $currentUser->books()->find($id);
+
+        if(!$book)
+            throw new NotFoundHttpException;
+
+        return $book;
+    }
+
+    public function update(Request $request, $id)
+    {
+        $currentUser = JWTAuth::parseToken()->authenticate();
+
+        $book = $currentUser->books()->find($id);
+        if(!$book)
+            throw new NotFoundHttpException;
+
+        $book->fill($request->all());
+
+        if($book->save())
+            return $this->response->noContent();
+        else
+            return $this->response->error('could_not_update_book', 500);
+    }
+
+    public function destroy($id)
+    {
+        $currentUser = JWTAuth::parseToken()->authenticate();
+
+        $book = $currentUser->books()->find($id);
+
+        if(!$book)
+            throw new NotFoundHttpException;
+
+        if($book->delete())
+            return $this->response->noContent();
+        else
+            return $this->response->error('could_not_delete_book', 500);
+    }
 }

@@ -39,13 +39,13 @@ class AuthController extends Controller
             return $this->response->error('could_not_create_token', 500);
         }
 
-        return response()->json(compact('token'));
+        return response()->json(compact('token')); //returns token
     }
 
     public function signup(Request $request)
     {
         $signupFields = Config::get('boilerplate.signup_fields');
-        $hasToReleaseToken = Config::get('boilerplate.signup_token_release');
+        $hasToReleaseToken = Config::get('boilerplate.signup_token_release'); //true
 
         $userData = $request->only($signupFields);
 
@@ -63,8 +63,8 @@ class AuthController extends Controller
             return $this->response->error('could_not_create_user', 500);
         }
 
-        if($hasToReleaseToken) {
-            return $this->login($request);
+        if($hasToReleaseToken) { //true
+            return $this->login($request); //returns token
         }
         
         return $this->response->created();

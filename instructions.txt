@@ -86,14 +86,10 @@ $ php artisan make:migration create_books_table --create=books
 
 Schema::create('books', function (Blueprint $table) {
         $table->increments('id');
-
-		// adding specific fields here...
         $table->string('title');
         $table->string('author_name');
         $table->integer('pages_count');
-
         $table->integer('user_id')->index();
-
         $table->timestamps();
     });
 
@@ -191,6 +187,10 @@ $ php artisan api:routes
 
 http://localhost:8000/api/auth/book/store
 {"message":"404 Not Found","status_code":404} //we have to fill the fillable data
+App\Book Model protected $fillable = ['title', 'author_name', 'pages_count'];
+App\Api\V1\Controllers\BookController@store method implements fillable data
+
+$ curl -X POST -F 'title=New Book' -F "author_name=Author's Name" -F 'pages_count=132' http://localhost:8000/api/book/store?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4MDAwXC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNDc1NTYwNzQ2LCJleHAiOjE0NzU2NDcxNDYsIm5iZiI6MTQ3NTU2MDc0NiwianRpIjoiY2FjNDlmODVhN2JiMzdlMTlhMzY1N2Q0ZTIxMDA3MTcifQ.Qfd4xUCHS3aVd9P7sliW2s-HcjgEECKOyZ8Nkj1Gdkc
 
 $ curl -X POST -F 'title=Written by Nuzhat' -F 'author_name=Nuzhat Selim' -F 'pages_count=432' http://localhost:8000/api/book/store?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4MDAwXC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNDc1NDg0NzcyLCJleHAiOjE0NzU1NzExNzIsIm5iZiI6MTQ3NTQ4NDc3MiwianRpIjoiNWIwMzJhN2IyYjc2M2I2ZDIwNGUyZWJlNjAxNzhmMzEifQ.W5NiTH-NRQ5Ewjrp5gN1O40SAkFYA_Qkr_JdJlS1bt4
 
@@ -212,6 +212,7 @@ Response:
 
 curl -X POST -F 'title=Third book' -F 'author_name=Nuzhat Selim' -F 'pages_count=532' http://localhost:8000/api/book/store?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4MDAwXC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNDc0MTg4MDA1LCJleHAiOjE0NzQxOTE2MDUsIm5iZiI6MTQ3NDE4ODAwNSwianRpIjoiMjFkZWIyZjZkZTI5ODBiMWM1YWRjNWM2MTgzOGZlNDEifQ.9A5kdzxIAZo27ZNjpkWyv7szq8zo8v_L45GI9LKfn_o
 
+/api/book will hit App\Api\V1\Controllers\BookController@index method which effectively returns all the books by current authenticated user
 curl --request GET http://localhost:8000/api/book?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4MDAwXC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNDc0MTY0ODQyLCJleHAiOjE0NzQxNjg0NDIsIm5iZiI6MTQ3NDE2NDg0MiwianRpIjoiYmVjMjc2NDUxYjViYmZhYjVlOTU0ODYwZjgwMGYxM2YifQ.sNoh--wvdGH12DgTyCttmz4O2mh4_Sc-cF9uOiclfRI
 
 $ curl --request GET http://localhost:8000/api/book?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4MDAwXC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNDc0MTY0ODQyLCJleHAiOjE0NzQxNjg0NDIsIm5iZiI6MTQ3NDE2NDg0MiwianRpIjoiYmVjMjc2NDUxYjViYmZhYjVlOTU0ODYwZjgwMGYxM2YifQ.sNoh--wvdGH12DgTyCttmz4O2mh4_Sc-cF9uOiclfRI
