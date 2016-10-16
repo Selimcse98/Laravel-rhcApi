@@ -1,4 +1,8 @@
 <?php
+header('Access-Control-Allow-Origin:  *');
+//header("Access-Control-Allow-Origin: *");
+header('Access-Control-Allow-Methods:  POST, GET, OPTIONS, PUT, DELETE');
+header('Access-Control-Allow-Headers:  Content-Type, X-Auth-Token, Origin, Authorization');
 	
 $api = app('Dingo\Api\Routing\Router');
 
@@ -30,6 +34,8 @@ $api->version('v1', function ($api) {
         $api->delete('books/{id}', 'App\Api\V1\Controllers\BookController@destroy');
     });
 
-    $api->resource('books', 'App\Api\V1\Controllers\BookController');
+    //$api->resource('books', 'App\Api\V1\Controllers\BookController');
+
+  
 
 });

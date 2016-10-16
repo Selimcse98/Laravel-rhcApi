@@ -469,3 +469,15 @@ class BookController extends Controller
 
 
 https://www.sitepoint.com/how-to-build-an-api-only-jwt-powered-laravel-app/
+
+to fix CORS (Cross Origin Resource Sharing), 
+XMLHttpRequest cannot load http://www.api.remoteselfcare.com/rhcApi/api/auth/login. 
+No 'Access-Control-Allow-Origin' header is present on the requested resource. 
+Origin 'http://localhost:9001' is therefore not allowed access
+
+Add the following at the top of app/public/index.php and app/http/routs_api.php
+
+header('Access-Control-Allow-Origin', 'some url');
+header('Allow', 'GET, POST, OPTIONS');
+header('Access-Control-Allow-Headers', 'Origin, Content-Type, Accept, Authorization, X-Request-With');
+header('Access-Control-Allow-Credentials', 'true');
