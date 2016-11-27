@@ -1,3 +1,6 @@
+https://github.com/barryvdh/laravel-cors/issues/63
+https://laracasts.com/discuss/channels/requests/laravel-5-cors-headers-with-filters?page=3
+
 https://www.sitepoint.com/how-to-build-an-api-only-jwt-powered-laravel-app/
 /Users/mohammadselimmiah/Sites/Api/rhcApi
 
@@ -83,6 +86,10 @@ $ curl -X POST -F 'email=davidwalsh@test.com' -F 'password=something' http://loc
 
 $ php artisan make:migration create_books_table --create=books
 //migration file will be created for books table
+
+
+$ curl -X POST -F 'name=Mohammad1' -F 'email=test1@gmail.com' -F 'password=something' http://www.api.remoteselfcare.com/rhcApi/api/auth/signup
+//User created in DB and returns token
 
 Schema::create('books', function (Blueprint $table) {
         $table->increments('id');

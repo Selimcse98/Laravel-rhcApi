@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
-class Authenticate
+class Authenticate1
 {
     /**
      * Handle an incoming request.
@@ -25,9 +25,6 @@ class Authenticate
             }
         }
 
-        return $next($request)
-            ->header('Access-Control-Allow-Origin', '*')
-            ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-        //return $next($request);
+        return $next($request);
     }
 }

@@ -39,7 +39,9 @@ class AuthController extends Controller
             return $this->response->error('could_not_create_token', 500);
         }
 
-        return response()->json(compact('token')); //returns token
+        return response()->json(compact('token'))->header('Access-Control-Allow-Origin', '*')
+            ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+             //returns token
     }
 
     public function signup(Request $request)
@@ -64,10 +66,12 @@ class AuthController extends Controller
         }
 
         if($hasToReleaseToken) { //true
-            return $this->login($request); //returns token
+            return $this->login($request)->header('Access-Control-Allow-Origin', '*')
+                ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS'); //returns token
         }
         
-        return $this->response->created();
+        return $this->response->created()->header('Access-Control-Allow-Origin', '*')
+            ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
     }
 
     public function recovery(Request $request)

@@ -1,8 +1,8 @@
 <?php
-header('Access-Control-Allow-Origin:  *');
+//header('Access-Control-Allow-Origin:*');
 //header("Access-Control-Allow-Origin: *");
-header('Access-Control-Allow-Methods:  POST, GET, OPTIONS, PUT, DELETE');
-header('Access-Control-Allow-Headers:  Content-Type, X-Auth-Token, Origin, Authorization');
+//header('Access-Control-Allow-Methods:  POST, GET, OPTIONS, PUT, DELETE');
+//header('Access-Control-Allow-Headers:  Content-Type, X-Auth-Token, Origin, Authorization');
 	
 $api = app('Dingo\Api\Routing\Router');
 
@@ -17,12 +17,14 @@ $api->version('v1', function ($api) {
 	$api->get('protected', ['middleware' => ['api.auth'], function () {
 		return \App\User::all();
     }]);
-
+*/
 	// example of free route
+    /*
 	$api->get('free', function() {
 		return \App\User::all();
 	});
-*/
+    */
+
     $api->group(['middleware' => 'api.auth'], function ($api) {
         $api->post('book/store', 'App\Api\V1\Controllers\BookController@store');
         $api->get('book', 'App\Api\V1\Controllers\BookController@index');
