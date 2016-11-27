@@ -83,4 +83,19 @@ class BookController extends Controller
         else
             return $this->response->error('could_not_delete_book', 500);
     }
+
+    public function destroyAll()
+    {
+        $currentUser = JWTAuth::parseToken()->authenticate();
+
+        $book = $currentUser->books();
+
+        if(!$book)
+            throw new NotFoundHttpException;
+
+        if($book->delete())
+            return $this->response->noContent();
+        else
+            return $this->response->error('could_not_delete_book', 500);
+    }
 }
