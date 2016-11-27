@@ -1,0 +1,1 @@
+<a href="{{ $link = url('/api/auth/reset', $token).'?email='.urlencode($user->getEmailForPasswordReset()) }}">{{ $link }}</a>

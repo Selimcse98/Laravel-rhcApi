@@ -18,6 +18,9 @@ class AuthController extends Controller
 {
     use Helpers;
 
+//Logging A User Out Of The Application
+//Auth::logout();
+
     public function login(Request $request)
     {
         $credentials = $request->only(['email', 'password']);

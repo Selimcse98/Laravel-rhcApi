@@ -488,3 +488,19 @@ header('Access-Control-Allow-Origin', 'some url');
 header('Allow', 'GET, POST, OPTIONS');
 header('Access-Control-Allow-Headers', 'Origin, Content-Type, Accept, Authorization, X-Request-With');
 header('Access-Control-Allow-Credentials', 'true');
+
+curl -X POST -F 'name=Mursaleen' -F 'email=mursaleen@gmail.com' -F 'password=something' http://localhost:8000/api/auth/signup
+curl -X POST -F 'email=mursaleen@gmail.com' -F 'password=something' http://localhost:8000/api/auth/login
+curl -X POST -F 'title=Mursaleens Book' -F "author_name=Mursaleen" -F 'pages_count=132' http://localhost:8000/api/book/store?token=
+curl --request GET http://localhost:8000/api/book?token=
+curl --request GET http://localhost:8000/api/books?token=
+curl --request GET http://localhost:8000/api/books/9?token=
+curl -X PUT -d 'title=Mursaleens excellent book' -d 'author_name=Excellent Monon' -d 'pages_count=1234' http://localhost:8000/api/books/8?token=
+curl -v -X DELETE http://localhost:8000/api/books/10?token=
+curl -i -X DELETE http://localhost:8000/api/books?token=
+curl -X POST -F 'email=davidwalsh@test.com' http://localhost:8000/api/auth/recovery
+
+Password reset video help: https://www.youtube.com/watch?v=duMmNEJEZCw
+
+How to test a REST api from command line with curl
+http://www.codingpedia.org/ama/how-to-test-a-rest-api-from-command-line-with-curl/#211_Delete_all_podcasts_preparation_step

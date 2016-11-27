@@ -151,3 +151,17 @@ Cache-Control: private, must-revalidate
 ETag: "da39a3ee5e6b4b0d3255bfef95601890afd80709"
 Date: Sun, 27 Nov 2016 01:44:32 GMT
 Content-type: text/html; charset=UTF-8
+
+curl -X POST -F 'email=selimcse98@gmail.com' http://localhost:8000/api/auth/recovery
+{"message":"View [auth.emails.password] not found.","status_code":500}
+
+$ curl -X POST -F 'email=davidwalsh@test.com' -F 'password=something123' -F 'password_confirmation=something123' -F 'token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4MDAwXC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNDgwMjI2ODUzLCJleHAiOjE0ODAzMTMyNTMsIm5iZiI6MTQ4MDIyNjg1MywianRpIjoiNDQ2OWU0ODE2NzZiNWZlMzRmYTc1OTJjYWYxNWVkMTEifQ.k1UUZsHNLx8gP9KO-uFv_koFgsHObWmJSI6pMsGhSYg' http://localhost:8000/api/auth/reset
+{"message":"could_not_reset_password","status_code":500}
+
+$ curl -X POST -F 'email=davidwalsh@test.com' -F 'password=something1' -F 'password_confirmation=something' -F 'token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4MDAwXC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNDgwMjI2ODUzLCJleHAiOjE0ODAzMTMyNTMsIm5iZiI6MTQ4MDIyNjg1MywianRpIjoiNDQ2OWU0ODE2NzZiNWZlMzRmYTc1OTJjYWYxNWVkMTEifQ.k1UUZsHNLx8gP9KO-uFv_koFgsHObWmJSI6pMsGhSYg' http://localhost:8000/api/auth/reset
+{"message":"422 Unprocessable Entity","errors":[["The password confirmation does not match."]],"status_code":422}
+
+Password reset video help: https://www.youtube.com/watch?v=duMmNEJEZCw
+
+How to test a REST api from command line with curl
+http://www.codingpedia.org/ama/how-to-test-a-rest-api-from-command-line-with-curl/#211_Delete_all_podcasts_preparation_step

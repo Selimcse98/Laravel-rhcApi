@@ -1,0 +1,55 @@
+
+curl -X POST -F 'name=Mursaleen' -F 'email=mursaleen@gmail.com' -F 'password=something' http://localhost:8000/api/auth/signup
+
+curl -X POST -F 'email=mursaleen@gmail.com' -F 'password=something' http://localhost:8000/api/auth/login
+curl -X POST -F 'email=mursaleen@gmail.com' http://localhost:8000/api/auth/recovery
+
+curl -X POST -F 'title=Mursaleens Book' -F "author_name=Mursaleen" -F 'pages_count=132' http://localhost:8000/api/book/store?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4MDAwXC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNDgwMjA2Nzg4LCJleHAiOjE0ODAyOTMxODgsIm5iZiI6MTQ4MDIwNjc4OCwianRpIjoiZWM2ZmNjMDEwMzc1OTkzY2ExNjNiYzAxNTExOThmNzQifQ.Xgn08MHDRSC48H57uur2VYAJS6viWbcSLOQSOVry4OU
+
+curl -X POST -F 'title=Mursaleens second book' -F "author_name=Mursaleen Selim" -F 'pages_count=136' http://localhost:8000/api/book/store?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4MDAwXC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNDgwMjA2Nzg4LCJleHAiOjE0ODAyOTMxODgsIm5iZiI6MTQ4MDIwNjc4OCwianRpIjoiZWM2ZmNjMDEwMzc1OTkzY2ExNjNiYzAxNTExOThmNzQifQ.Xgn08MHDRSC48H57uur2VYAJS6viWbcSLOQSOVry4OU
+
+curl --request GET http://localhost:8000/api/book?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4MDAwXC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNDgwMjA2Nzg4LCJleHAiOjE0ODAyOTMxODgsIm5iZiI6MTQ4MDIwNjc4OCwianRpIjoiZWM2ZmNjMDEwMzc1OTkzY2ExNjNiYzAxNTExOThmNzQifQ.Xgn08MHDRSC48H57uur2VYAJS6viWbcSLOQSOVry4OU
+
+curl --request GET http://localhost:8000/api/books?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4MDAwXC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNDgwMjA2Nzg4LCJleHAiOjE0ODAyOTMxODgsIm5iZiI6MTQ4MDIwNjc4OCwianRpIjoiZWM2ZmNjMDEwMzc1OTkzY2ExNjNiYzAxNTExOThmNzQifQ.Xgn08MHDRSC48H57uur2VYAJS6viWbcSLOQSOVry4OU
+
+
+$ php artisan api:routes
++------+----------+--------------------+------+------------------------------------------------+-----------+------------+----------+------------+
+| Host | Method   | URI                | Name | Action                                         | Protected | Version(s) | Scope(s) | Rate Limit |
++------+----------+--------------------+------+------------------------------------------------+-----------+------------+----------+------------+
+|      | POST     | /api/auth/login    |      | App\Api\V1\Controllers\AuthController@login    | No        | v1         |          |            |
+|      | POST     | /api/auth/signup   |      | App\Api\V1\Controllers\AuthController@signup   | No        | v1         |          |            |
+|      | POST     | /api/auth/recovery |      | App\Api\V1\Controllers\AuthController@recovery | No        | v1         |          |            |
+|      | POST     | /api/auth/reset    |      | App\Api\V1\Controllers\AuthController@reset    | No        | v1         |          |            |
+|      | POST     | /api/book/store    |      | App\Api\V1\Controllers\BookController@store    | Yes       | v1         |          |            |
+|      | GET|HEAD | /api/book          |      | App\Api\V1\Controllers\BookController@index    | Yes       | v1         |          |            |
+|      | GET|HEAD | /api/books         |      | App\Api\V1\Controllers\BookController@index    | Yes       | v1         |          |            |
+|      | GET|HEAD | /api/books/{id}    |      | App\Api\V1\Controllers\BookController@show     | Yes       | v1         |          |            |
+|      | PUT      | /api/books/{id}    |      | App\Api\V1\Controllers\BookController@update   | Yes       | v1         |          |            |
+|      | DELETE   | /api/books/{id}    |      | App\Api\V1\Controllers\BookController@destroy  | Yes       | v1         |          |            |
++------+----------+--------------------+------+------------------------------------------------+-----------+------------+----------+------------+
+
+curl --request GET http://localhost:8000/api/books/9?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4MDAwXC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNDgwMjA2Nzg4LCJleHAiOjE0ODAyOTMxODgsIm5iZiI6MTQ4MDIwNjc4OCwianRpIjoiZWM2ZmNjMDEwMzc1OTkzY2ExNjNiYzAxNTExOThmNzQifQ.Xgn08MHDRSC48H57uur2VYAJS6viWbcSLOQSOVry4OU
+
+curl --request GET http://localhost:8000/api/books/1?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4MDAwXC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNDgwMjA2Nzg4LCJleHAiOjE0ODAyOTMxODgsIm5iZiI6MTQ4MDIwNjc4OCwianRpIjoiZWM2ZmNjMDEwMzc1OTkzY2ExNjNiYzAxNTExOThmNzQifQ.Xgn08MHDRSC48H57uur2VYAJS6viWbcSLOQSOVry4OU
+
+curl -X PUT -d 'title=Mursaleens First book' -d "author_name=Mursaleen Selim Monon" -d 'pages_count=140' http://localhost:8000/api/books/8?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4MDAwXC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNDgwMjA2Nzg4LCJleHAiOjE0ODAyOTMxODgsIm5iZiI6MTQ4MDIwNjc4OCwianRpIjoiZWM2ZmNjMDEwMzc1OTkzY2ExNjNiYzAxNTExOThmNzQifQ.Xgn08MHDRSC48H57uur2VYAJS6viWbcSLOQSOVry4OU
+
+curl -X PUT -d 'title=Mursaleens excellent book' -d 'author_name=Excellent Monon' -d 'pages_count=1234' http://localhost:8000/api/books/8?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4MDAwXC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNDgwMjA2Nzg4LCJleHAiOjE0ODAyOTMxODgsIm5iZiI6MTQ4MDIwNjc4OCwianRpIjoiZWM2ZmNjMDEwMzc1OTkzY2ExNjNiYzAxNTExOThmNzQifQ.Xgn08MHDRSC48H57uur2VYAJS6viWbcSLOQSOVry4OU
+
+
+
+curl -X POST -F 'title=Mursaleens book deleted' -F "author_name=Mursaleen Selim delete" -F 'pages_count=136' http://localhost:8000/api/book/store?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4MDAwXC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNDgwMjA2Nzg4LCJleHAiOjE0ODAyOTMxODgsIm5iZiI6MTQ4MDIwNjc4OCwianRpIjoiZWM2ZmNjMDEwMzc1OTkzY2ExNjNiYzAxNTExOThmNzQifQ.Xgn08MHDRSC48H57uur2VYAJS6viWbcSLOQSOVry4OU
+
+curl -i -X DELETE http://localhost:8888/demo-rest-jersey-spring/podcasts/
+
+curl -v -X DELETE http://localhost:8000/api/books/10?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4MDAwXC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNDgwMjA2Nzg4LCJleHAiOjE0ODAyOTMxODgsIm5iZiI6MTQ4MDIwNjc4OCwianRpIjoiZWM2ZmNjMDEwMzc1OTkzY2ExNjNiYzAxNTExOThmNzQifQ.Xgn08MHDRSC48H57uur2VYAJS6viWbcSLOQSOVry4OU
+
+curl -i -X DELETE http://localhost:8000/api/books?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4MDAwXC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNDgwMjA2Nzg4LCJleHAiOjE0ODAyOTMxODgsIm5iZiI6MTQ4MDIwNjc4OCwianRpIjoiZWM2ZmNjMDEwMzc1OTkzY2ExNjNiYzAxNTExOThmNzQifQ.Xgn08MHDRSC48H57uur2VYAJS6viWbcSLOQSOVry4OU
+
+curl -X POST -F 'email=selimcse98@gmail.com' http://localhost:8000/api/auth/recovery  before changing env
+{"message":"View [auth.emails.password] not found.","status_code":500}
+curl -X POST -F 'email=selimcse98@gmail.com' http://localhost:8000/api/auth/recovery
+
+$ curl -X POST -F 'email=davidwalsh@test.com' -F 'password=something123' -F 'password_confirmation=something123' -F 'token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4MDAwXC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNDgwMjI2ODUzLCJleHAiOjE0ODAzMTMyNTMsIm5iZiI6MTQ4MDIyNjg1MywianRpIjoiNDQ2OWU0ODE2NzZiNWZlMzRmYTc1OTJjYWYxNWVkMTEifQ.k1UUZsHNLx8gP9KO-uFv_koFgsHObWmJSI6pMsGhSYg' http://localhost:8000/api/auth/reset
+{"message":"could_not_reset_password","status_code":500}
