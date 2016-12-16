@@ -504,3 +504,4 @@ Password reset video help: https://www.youtube.com/watch?v=duMmNEJEZCw
 
 How to test a REST api from command line with curl
 http://www.codingpedia.org/ama/how-to-test-a-rest-api-from-command-line-with-curl/#211_Delete_all_podcasts_preparation_step
+https://www.sitepoint.com/how-to-build-an-api-only-jwt-powered-laravel-app/

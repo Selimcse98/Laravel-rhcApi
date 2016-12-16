@@ -53,3 +53,7 @@ curl -X POST -F 'email=selimcse98@gmail.com' http://localhost:8000/api/auth/reco
 
 $ curl -X POST -F 'email=davidwalsh@test.com' -F 'password=something123' -F 'password_confirmation=something123' -F 'token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4MDAwXC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNDgwMjI2ODUzLCJleHAiOjE0ODAzMTMyNTMsIm5iZiI6MTQ4MDIyNjg1MywianRpIjoiNDQ2OWU0ODE2NzZiNWZlMzRmYTc1OTJjYWYxNWVkMTEifQ.k1UUZsHNLx8gP9KO-uFv_koFgsHObWmJSI6pMsGhSYg' http://localhost:8000/api/auth/reset
 {"message":"could_not_reset_password","status_code":500}
+
+curl -X POST -F 'email=mursaleen@gmail.com' -F 'password=something' http://localhost:8000/api/auth/logout?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4MDAwXC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNDgxMTAyODU0LCJleHAiOjE0ODExODkyNTQsIm5iZiI6MTQ4MTEwMjg1NCwianRpIjoiMWQ4OGU3ZWViYjQ2ZDcxMDVhOWRkNDBjOWQ3ZTAxNjIifQ.BRyUe6snbda9GS5biCLPoPy__rboWcesfjkA-rjD00U
+//{"message":"The token has been blacklisted","status_code":401}
+

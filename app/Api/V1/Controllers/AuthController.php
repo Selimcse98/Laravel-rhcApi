@@ -19,7 +19,11 @@ class AuthController extends Controller
     use Helpers;
 
 //Logging A User Out Of The Application
+
+    public function logout(){
 //Auth::logout();
+        JWTAuth::invalidate(JWTAuth::getToken());
+    }
 
     public function login(Request $request)
     {

@@ -12,6 +12,7 @@ $api->version('v1', function ($api) {
 	$api->post('auth/signup', 'App\Api\V1\Controllers\AuthController@signup');
 	$api->post('auth/recovery', 'App\Api\V1\Controllers\AuthController@recovery');
 	$api->post('auth/reset', 'App\Api\V1\Controllers\AuthController@reset');
+    $api->post('auth/logout', 'App\Api\V1\Controllers\AuthController@logout');
 /*
 	// example of protected route
 	$api->get('protected', ['middleware' => ['api.auth'], function () {
@@ -34,6 +35,7 @@ $api->version('v1', function ($api) {
         $api->put('books/{id}', 'App\Api\V1\Controllers\BookController@update');
         $api->delete('books/{id}', 'App\Api\V1\Controllers\BookController@destroy');
         $api->delete('books', 'App\Api\V1\Controllers\BookController@destroyAll');
+
     });
 
     //$api->resource('books', 'App\Api\V1\Controllers\BookController');
