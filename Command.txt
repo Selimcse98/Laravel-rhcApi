@@ -46,7 +46,7 @@ curl -i -X DELETE http://localhost:8888/demo-rest-jersey-spring/podcasts/
 curl -v -X DELETE http://localhost:8000/api/books/10?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4MDAwXC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNDgwMjA2Nzg4LCJleHAiOjE0ODAyOTMxODgsIm5iZiI6MTQ4MDIwNjc4OCwianRpIjoiZWM2ZmNjMDEwMzc1OTkzY2ExNjNiYzAxNTExOThmNzQifQ.Xgn08MHDRSC48H57uur2VYAJS6viWbcSLOQSOVry4OU
 
 curl -i -X DELETE http://localhost:8000/api/books?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4MDAwXC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNDgwMjA2Nzg4LCJleHAiOjE0ODAyOTMxODgsIm5iZiI6MTQ4MDIwNjc4OCwianRpIjoiZWM2ZmNjMDEwMzc1OTkzY2ExNjNiYzAxNTExOThmNzQifQ.Xgn08MHDRSC48H57uur2VYAJS6viWbcSLOQSOVry4OU
-
+f
 curl -X POST -F 'email=selimcse98@gmail.com' http://localhost:8000/api/auth/recovery  before changing env
 {"message":"View [auth.emails.password] not found.","status_code":500}
 curl -X POST -F 'email=selimcse98@gmail.com' http://localhost:8000/api/auth/recovery
@@ -56,4 +56,53 @@ $ curl -X POST -F 'email=davidwalsh@test.com' -F 'password=something123' -F 'pas
 
 curl -X POST -F 'email=mursaleen@gmail.com' -F 'password=something' http://localhost:8000/api/auth/logout?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4MDAwXC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNDgxMTAyODU0LCJleHAiOjE0ODExODkyNTQsIm5iZiI6MTQ4MTEwMjg1NCwianRpIjoiMWQ4OGU3ZWViYjQ2ZDcxMDVhOWRkNDBjOWQ3ZTAxNjIifQ.BRyUe6snbda9GS5biCLPoPy__rboWcesfjkA-rjD00U
 //{"message":"The token has been blacklisted","status_code":401}
+
+================================= Kamrul's Remote Site Curl Commands ============================================
+signup:
+curl -X POST -F 'name=Mohammad5' -F 'email=test5@gmail.com' -F 'password=something' http://www.api.remoteselfcare.com/rhcApi/api/auth/signup
+
+login:
+curl -X POST -F 'email=test5@gmail.com' -F 'password=something' http://www.api.remoteselfcare.com/rhcApi/api/auth/login
+
+store:
+curl -X POST -F 'title=BookTest5' -F 'author_name=Mohammad5' -F 'pages_count=432' http://www.api.remoteselfcare.com/rhcApi/api/book/store?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEyLCJpc3MiOiJodHRwOlwvXC93d3cuYXBpLnJlbW90ZXNlbGZjYXJlLmNvbVwvcmhjQXBpXC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNDgxOTU2ODgzLCJleHAiOjE0ODIwNDMyODMsIm5iZiI6MTQ4MTk1Njg4MywianRpIjoiYzEyZDkwZWM1N2IwMWZlYjNjZWM5NDA1Njc3YjBhODcifQ.D1spAj8rgTiO6A9zvq5iAh_pwr00kWkeWkNdGHHTYSk
+
+
+curl -X POST -F 'title=Book2Test5' -F 'author_name=Mohammad5_2' -F 'pages_count=222' http://www.api.remoteselfcare.com/rhcApi/api/book/store?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEyLCJpc3MiOiJodHRwOlwvXC93d3cuYXBpLnJlbW90ZXNlbGZjYXJlLmNvbVwvcmhjQXBpXC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNDgxOTU2ODgzLCJleHAiOjE0ODIwNDMyODMsIm5iZiI6MTQ4MTk1Njg4MywianRpIjoiYzEyZDkwZWM1N2IwMWZlYjNjZWM5NDA1Njc3YjBhODcifQ.D1spAj8rgTiO6A9zvq5iAh_pwr00kWkeWkNdGHHTYSk
+
+Show Book by ID:
+curl --request GET http://www.api.remoteselfcare.com/rhcApi/api/books/5?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEyLCJpc3MiOiJodHRwOlwvXC93d3cuYXBpLnJlbW90ZXNlbGZjYXJlLmNvbVwvcmhjQXBpXC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNDgxOTU2ODgzLCJleHAiOjE0ODIwNDMyODMsIm5iZiI6MTQ4MTk1Njg4MywianRpIjoiYzEyZDkwZWM1N2IwMWZlYjNjZWM5NDA1Njc3YjBhODcifQ.D1spAj8rgTiO6A9zvq5iAh_pwr00kWkeWkNdGHHTYSk
+
+Show all books:
+curl --request GET http://www.api.remoteselfcare.com/rhcApi/api/book?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEyLCJpc3MiOiJodHRwOlwvXC93d3cuYXBpLnJlbW90ZXNlbGZjYXJlLmNvbVwvcmhjQXBpXC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNDgxOTU2ODgzLCJleHAiOjE0ODIwNDMyODMsIm5iZiI6MTQ4MTk1Njg4MywianRpIjoiYzEyZDkwZWM1N2IwMWZlYjNjZWM5NDA1Njc3YjBhODcifQ.D1spAj8rgTiO6A9zvq5iAh_pwr00kWkeWkNdGHHTYSk
+
+Update:
+curl -X PUT -d 'title=Test Book' -d "author_name=Test user5" -d 'pages_count=140' http://www.api.remoteselfcare.com/rhcApi/api/books/5?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEyLCJpc3MiOiJodHRwOlwvXC93d3cuYXBpLnJlbW90ZXNlbGZjYXJlLmNvbVwvcmhjQXBpXC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNDgxOTU2ODgzLCJleHAiOjE0ODIwNDMyODMsIm5iZiI6MTQ4MTk1Njg4MywianRpIjoiYzEyZDkwZWM1N2IwMWZlYjNjZWM5NDA1Njc3YjBhODcifQ.D1spAj8rgTiO6A9zvq5iAh_pwr00kWkeWkNdGHHTYSk
+
+Destroy by ID:
+curl -v -X DELETE http://www.api.remoteselfcare.com/rhcApi/api/books/7?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEyLCJpc3MiOiJodHRwOlwvXC93d3cuYXBpLnJlbW90ZXNlbGZjYXJlLmNvbVwvcmhjQXBpXC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNDgxOTU2ODgzLCJleHAiOjE0ODIwNDMyODMsIm5iZiI6MTQ4MTk1Njg4MywianRpIjoiYzEyZDkwZWM1N2IwMWZlYjNjZWM5NDA1Njc3YjBhODcifQ.D1spAj8rgTiO6A9zvq5iAh_pwr00kWkeWkNdGHHTYSk
+
+Destry all bookes:
+curl -v -X DELETE http://www.api.remoteselfcare.com/rhcApi/api/books?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEyLCJpc3MiOiJodHRwOlwvXC93d3cuYXBpLnJlbW90ZXNlbGZjYXJlLmNvbVwvcmhjQXBpXC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNDgxOTU2ODgzLCJleHAiOjE0ODIwNDMyODMsIm5iZiI6MTQ4MTk1Njg4MywianRpIjoiYzEyZDkwZWM1N2IwMWZlYjNjZWM5NDA1Njc3YjBhODcifQ.D1spAj8rgTiO6A9zvq5iAh_pwr00kWkeWkNdGHHTYSk
+
+logout:
+curl -X POST -F 'email=mursaleen@gmail.com' -F 'password=something' http://www.api.remoteselfcare.com/rhcApi/api/auth/logout?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEyLCJpc3MiOiJodHRwOlwvXC93d3cuYXBpLnJlbW90ZXNlbGZjYXJlLmNvbVwvcmhjQXBpXC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNDgxOTU2ODgzLCJleHAiOjE0ODIwNDMyODMsIm5iZiI6MTQ4MTk1Njg4MywianRpIjoiYzEyZDkwZWM1N2IwMWZlYjNjZWM5NDA1Njc3YjBhODcifQ.D1spAj8rgTiO6A9zvq5iAh_pwr00kWkeWkNdGHHTYSk
+
+======================== Passowrd Recovery (Sent an email)  working properly: ========================
+curl -X POST -F 'email=test5@gmail.com' http://www.api.remoteselfcare.com/rhcApi/api/auth/recovery
+
+Localhost email works perfectly alright
+curl -X POST -F 'email=selimcse98@gmail.com' http://localhost:8000/api/auth/recovery
+
+$ curl -X POST -F 'email=doctor@test.com' http://www.api.remoteselfcare.com/rhcApi/api/auth/recovery   done
+{"message":"View [auth.emails.password] not found.","status_code":500}
+`password_resets` table gets updated with email, token and created_at
+
+1. .env email parameters
+2. view -> auth->emails->password.blade.php password reset link sent by email
+3. Config->mail -> 'from' => ['address' => 'mursaleen@gmail.com', 'name' => 'Laravel Api'],
+
+
+======================== Password reset not working yet: ========================
+curl -X POST -F 'email=test5@gmail.com' -F 'password=something' -F 'password_confirmation=something' -F 'token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEyLCJpc3MiOiJodHRwOlwvXC93d3cuYXBpLnJlbW90ZXNlbGZjYXJlLmNvbVwvcmhjQXBpXC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNDgxOTYzODY5LCJleHAiOjE0ODIwNTAyNjksIm5iZiI6MTQ4MTk2Mzg2OSwianRpIjoiYmE3YWQwZDNiMThkNTNkM2QzZGE4MDNhMGM0ZWIyMzgifQ.o4GTVIXAUwgiZ0sSAA-BJ0L4kZVoFTHoLe_CfNM0mQk' http://www.api.remoteselfcare.com/rhcApi/api/auth/reset
 

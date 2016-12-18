@@ -494,6 +494,7 @@ curl -X POST -F 'email=mursaleen@gmail.com' -F 'password=something' http://local
 curl -X POST -F 'title=Mursaleens Book' -F "author_name=Mursaleen" -F 'pages_count=132' http://localhost:8000/api/book/store?token=
 curl --request GET http://localhost:8000/api/book?token=
 curl --request GET http://localhost:8000/api/books?token=
+show book/id
 curl --request GET http://localhost:8000/api/books/9?token=
 curl -X PUT -d 'title=Mursaleens excellent book' -d 'author_name=Excellent Monon' -d 'pages_count=1234' http://localhost:8000/api/books/8?token=
 curl -v -X DELETE http://localhost:8000/api/books/10?token=
@@ -505,3 +506,46 @@ Password reset video help: https://www.youtube.com/watch?v=duMmNEJEZCw
 How to test a REST api from command line with curl
 http://www.codingpedia.org/ama/how-to-test-a-rest-api-from-command-line-with-curl/#211_Delete_all_podcasts_preparation_step
 https://www.sitepoint.com/how-to-build-an-api-only-jwt-powered-laravel-app/
+
+curl -X POST -F 'email=mursaleen@gmail.com' -F 'password=something' http://localhost:8000/api/auth/logout?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4MDAwXC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNDgxMTAyODU0LCJleHAiOjE0ODExODkyNTQsIm5iZiI6MTQ4MTEwMjg1NCwianRpIjoiMWQ4OGU3ZWViYjQ2ZDcxMDVhOWRkNDBjOWQ3ZTAxNjIifQ.BRyUe6snbda9GS5biCLPoPy__rboWcesfjkA-rjD00U
+//{"message":"The token has been blacklisted","status_code":401}
+
+================ Remote Commands Kamrul ==========================
+$curl -X POST -F 'name=Mohammad4' -F 'email=test4@gmail.com' -F 'password=something' http://www.api.remoteselfcare.com/rhcApi/api/auth/signup
+$ curl -X POST -F 'name=Mohammad Miah' -F 'email=selffimcse98@gmail.com' -F 'password=something' http://www.api.remoteselfcare.com/rhcApi/api/auth/signup
+curl -X POST -F 'email=selffimcse98@gmail.com' -F 'password=something' http://www.api.remoteselfcare.com/rhcApi/api/auth/login
+curl -X POST -F 'title=Written by Nuzhat' -F 'author_name=Nuzhat Selim' -F 'pages_count=432' http://www.api.remoteselfcare.com/rhcApi/api/book/store?token=
+
+================ Remote Commands Selim ==========================
+http://selim.gear.host/rhcApi/
+curl -X POST -F 'name=Mohammad' -F 'email=test@gmail.com' -F 'password=something' http://selim.gear.host/rhcApi/api/auth/signup
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

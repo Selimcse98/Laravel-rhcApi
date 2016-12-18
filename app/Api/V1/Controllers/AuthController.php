@@ -22,7 +22,8 @@ class AuthController extends Controller
 
     public function logout(){
 //Auth::logout();
-        JWTAuth::invalidate(JWTAuth::getToken());
+        JWTAuth::invalidate(JWTAuth::getToken())->header('Access-Control-Allow-Origin', '*')
+            ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');;
     }
 
     public function login(Request $request)
